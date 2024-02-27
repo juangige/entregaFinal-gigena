@@ -1,0 +1,41 @@
+.contNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #4433ff;
+}
+
+.titleStyle{
+    font-family: "Kdam Thmor Pro", sans-serif;
+    color: #ffff;
+    fontWeight: 500;
+    margin-left: 20px;
+}
+
+.contButtons{
+    display: flex;
+    gap: 5rem;
+}
+
+.ButtonStyle{
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: 1px solid;
+    border-radius: 5px;
+    border: 2px solid #4433ff;
+    background: #4433ff;
+    font-weight: 100;
+}
+
+.ButtonStyle:hover{
+    background: #fff;
+    color: #4433ff
+}

@@ -1,42 +1,24 @@
 import React from 'react'
 import CartWidget from './CartWidget'
+import './NavStyle.css'
+
 
 const NavBar = () => {
 
-    const navStyle = {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '20px',
-        margin: '20px',
-    }
-
-    const titleStyle = {
-        fontFamily: '"Kdam Thmor Pro", sans-serif',
-        fontWeight: '500'
-    }
-
-    const contButtons = {
-        display: 'flex',
-        gap: '5rem',
-    }
-
-    const buttonStyle = {
-        padding: '5px',
-    }
-
-  return (
+    return (
     <>
-    <nav style={navStyle}>
+    
+    <nav className='contNav'>
 
     <div>
-      <h1 style={titleStyle}>JTech</h1>
+        <a href="../"><h1 className='titleStyle'>JTech</h1></a>
+      
     </div>
-    <div style={contButtons}>
-      <button style={buttonStyle}>Hardware</button>
-      <button style={buttonStyle}>Perifericos</button>
-      <button style={buttonStyle}>Monitores</button>
-      <button style={buttonStyle}>Notebooks</button>
+    <div className='contButtons'>
+      <button className='ButtonStyle'>Hardware</button>
+      <button className='ButtonStyle'>Perifericos</button>
+      <button className='ButtonStyle'>Monitores</button>
+      <button className='ButtonStyle'>Notebooks</button>
     </div>
     <CartWidget />
     
