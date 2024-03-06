@@ -1,0 +1,10 @@
+.secNavLogo{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.logos-display{
+    display: flex;
+    gap: 2rem;
+}

@@ -1,0 +1,48 @@
+.section-flex{
+    display: flex;
+    justify-content: center;
+}
+
+.sectionCarts1{
+    display: inline-block;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 30px 20px 5px 20px;
+    
+} 
+
+.cartCont{
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.div-btn{
+    text-align: center;
+}
+
+.buttonCart{
+    width: 20px;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+}
+
+.agregarCarritoBtn{
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    outline: 1px solid;
+    border-radius: 5px;
+    border: 2px solid #4433ff;
+    background: #4433ff;
+    font-weight: 100;
+    margin-top: 5px;
+}

@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { getProducts } from '../asyncMock'
+import ItemList from '../components/ItemList/ItemList.jsx'
 
 export default function ItemListContainer({greeting}) {
 
-    const greStyle = {
-        marginTop: '50px',
-        textAlign: 'center',
-    }
+    const [productos, setProductos] = useState([])
+
+    useEffect(() =>{
+      getProducts()
+      .then(response => {
+        setProductos(response)
+      })
+      .catch(error => {
+        console.error(error)
+      })
+    })
 
   return (
     <>
-     <h2 style={greStyle}>{greeting}</h2> 
+     <h2>{greeting}</h2> 
+     <ItemList productos={productos} />
     </>
   )
 }
