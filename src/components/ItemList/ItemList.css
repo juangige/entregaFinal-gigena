@@ -1,4 +1,21 @@
-.display-cont{
+.item-list-container {
     display: flex;
     justify-content: center;
+}
+
+.item-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.item-list-grid > * {
+    max-width: 100%;
+}
+
+.item-list-grid img {
+    width: 100%; /* Establecer el ancho de las imágenes al 100% */
+    height: auto; /* Permitir que la altura se ajuste automáticamente para mantener la proporción */
 }

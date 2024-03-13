@@ -1,0 +1,36 @@
+.cardContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.cardProduct {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.imageContainer img {
+    max-width: 100%;
+    height: auto;
+}
+
+.infoContainer {
+    margin-top: 20px;
+}
+
+.price {
+    font-weight: bold;
+    color: #333333;
+}
+
+.stock {
+    color: #666666;
+}
+
+.description {
+    color: #888888;
+    margin-top: 10px;
+}
