@@ -19,24 +19,23 @@ export default function ItemCount({stock, initial, onAdd}) {
     }
 
   return (
-    <>
-    <section className='section-flex'>
-
-      <section className='sectionCarts1'>
-        <div className='cartCont'>
-            <button className='buttonCart' onClick={decrement}>-</button>
-            <h3 className='cantidadCart' > {cantidad} </h3>
-            <button className='buttonCart' onClick={increment}>+</button>
-        </div>
-        <div className='div-btn'>
-            <button className='agregarCarritoBtn' onClick={() => onAdd(cantidad)} disabled={!stock}>
-            Agregar al carrito
+    <div className='item-count-container'>
+            <div className='quantity-container'>
+                <button className='quantity-button' onClick={decrement}>
+                    -
+                </button>
+                <h3 className='quantity-display'>{cantidad}</h3>
+                <button className='quantity-button' onClick={increment}>
+                    +
+                </button>
+            </div>
+            <button
+                className='add-to-cart-button'
+                onClick={() => onAdd(cantidad)}
+                disabled={!stock}
+            >
+                Agregar al carrito
             </button>
         </div>
-      </section>
-
-    </section>
-
-    </>
   )
 }

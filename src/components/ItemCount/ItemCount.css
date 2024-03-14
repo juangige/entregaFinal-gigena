@@ -1,48 +1,55 @@
-.section-flex{
+.item-count-container {
     display: flex;
-    justify-content: center;
-}
-
-.sectionCarts1{
-    display: inline-block;
     flex-direction: column;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 30px 20px 5px 20px;
-    
-} 
+    align-items: center;
+}
 
-.cartCont{
-    width: 150px;
+.quantity-container {
     display: flex;
-    justify-content: space-between;
-    border: 1px solid;
-    border-radius: 5px;
+    align-items: center;
+    gap: 10px;
 }
 
-.div-btn{
-    text-align: center;
+.quantity-button {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-.buttonCart{
-    width: 20px;
-    margin: 2px;
+.quantity-button:hover {
+    background-color: #f3f3f3;
+    color: #555555;
+    border-color: #bbbbbb;
+}
+
+.quantity-display {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.add-to-cart-button {
+    background-color: #2196f3;
+    color: white;
     border: none;
     border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.agregarCarritoBtn{
-    min-width: 130px;
-    height: 40px;
-    color: #fff;
-    padding: 5px 10px;
-    font-weight: bold;
-    cursor: pointer;
-    display: inline-block;
-    outline: 1px solid;
-    border-radius: 5px;
-    border: 2px solid #4433ff;
-    background: #4433ff;
-    font-weight: 100;
-    margin-top: 5px;
+.add-to-cart-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }
+
+.add-to-cart-button:hover {
+    background-color: #0e91f0;
+}
+

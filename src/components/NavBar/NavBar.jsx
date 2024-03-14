@@ -1,6 +1,7 @@
 import React from 'react'
-import CartWidget from '../CartWidget.jsx'
+import CartWidget from '../CartWidget/CartWidget.jsx'
 import './NavStyle.css'
+import { Link } from 'react-router-dom'
 
 
 const NavBar = () => {
@@ -15,10 +16,18 @@ const NavBar = () => {
       
     </div>
     <div className='contButtons '>
-      <button className='ButtonStyle'>Hardware</button>
-      <button className='ButtonStyle'>Perifericos</button>
-      <button className='ButtonStyle'>Monitores</button>
-      <button className='ButtonStyle'>Notebooks</button>
+      <button className='ButtonStyle'>
+        <Link to={'/hardware'}>Hardware</Link>
+        </button>
+      <button className='ButtonStyle'>
+      <Link to={'/perifericos'}>Perifericos</Link>
+        </button>
+      <button className='ButtonStyle'>
+      <Link to={'/monitores'}>Monitores</Link>
+        </button>
+      <button className='ButtonStyle'>
+      <Link to={'/notebooks'}>Notebooks</Link>
+        </button>
     </div>
     <CartWidget />
     

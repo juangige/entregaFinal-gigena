@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { getProducts } from '../asyncMock'
+import { getProducts, getProductsById } from '../asyncMock'
 import ItemList from '../components/ItemList/ItemList.jsx'
 
 export default function ItemListContainer({greeting}) {
 
-    const [productos, setProductos] = useState([])
+    const [productos, setProductos] = useState([])   
 
     useEffect(() =>{
       getProducts()
