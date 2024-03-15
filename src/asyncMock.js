@@ -6,6 +6,7 @@ const productos = [
       imagenUrl: 'https://imgs.search.brave.com/ddd81KHAQO8rUzQGqp4axOwxbq1Ov53WQWuIEyKv0i0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9hc3IvMGJj/ODhlMGUtOWM0MC00/NGM0LTg1M2MtOTgy/MTVmMDg0ZTgzLmFl/M2NiNzQ4MjkxODI4/ODA4MzkxYjYwMTIx/OGUzMDg2LmpwZWc_/b2RuSGVpZ2h0PTYx/MiZvZG5XaWR0aD02/MTImb2RuQmc9RkZG/RkZG',
       stock: 10,
       precio: 799.99,
+      category: 'hardware',
   },
   {
       id: 2,
@@ -14,6 +15,7 @@ const productos = [
       imagenUrl: 'https://fullh4rd.com.ar/img/productos/1/micro-amd-ryzen-9-5900x-scooler-svideo-0.jpg',
       stock: 5,
       precio: 549.99,
+      category: 'hardware',
   },
   {
       id: 3,
@@ -22,6 +24,7 @@ const productos = [
       imagenUrl: 'https://innovapc.pe/tienda/525-large_default/placa-asus-rog-strix-x570-e-gaming-amd-x570-am4-ddr4-atx-sata-6gbs-usb-32-gen-.jpg',
       stock: 8,
       precio: 299.99,
+      category: 'hardware',
   },
   {
       id: 4,
@@ -30,6 +33,7 @@ const productos = [
       imagenUrl: 'https://imgs.search.brave.com/kODlIvp8l2ub46nhDzA0in_AhCMGbwLOpt2TYxGHdrE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/YmhwaG90b3ZpZGVv/LmNvbS9jZG4tY2dp/L2ltYWdlL2Zvcm1h/dD1hdXRvLGZpdD1z/Y2FsZS1kb3duLHdp/ZHRoPTUwMCxxdWFs/aXR5PTk1L2h0dHBz/Oi8vd3d3LmJocGhv/dG92aWRlby5jb20v/aW1hZ2VzL2ltYWdl/czUwMHg1MDAvbGdf/MjdnbDg1MF9iXzI3/X3VsdHJhZ2Vhcl9u/YW5vX2lwc18xNTYz/Mzg2ODAxXzE0ODg4/OTAuanBn',
       stock: 15,
       precio: 499.99,
+      category: 'monitores',
   },
   {
       id: 5,
@@ -38,6 +42,7 @@ const productos = [
       imagenUrl: 'https://imgs.search.brave.com/eqoTQT83ZAiDRazMuPdTK9yLAMzq8G60RvkJQx7UhjA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxbmlRaUtMOWxM/LmpwZw',
       stock: 20,
       precio: 199.99,
+      category: 'perifericos',
   },
   {
       id: 6,
@@ -46,6 +51,7 @@ const productos = [
       imagenUrl: 'https://imgs.search.brave.com/c-yOwHxJz0_GlKRSKhvJChDueQm5o9Yn7bNQphBwvXI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzF1eU5pSmpqeUwu/anBn',
       stock: 30,
       precio: 149.99,
+      category: 'perifericos',
   },
   {
       id: 7,
@@ -54,14 +60,16 @@ const productos = [
       imagenUrl: 'https://imgs.search.brave.com/HzFBZx_lA5fy_zXlaN7mZduskXF36CYXJ_Ca-xyJ2HE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzUxU0ttdTJHOUZM/LmpwZw',
       stock: 25,
       precio: 349.99,
+      category: 'perifericos',
   },
   {
       id: 8,
-      nombre: 'Samsung Odyssey G7 Monitor de juego',
+      nombre: 'Samsung Odyssey G7 Gaming',
       descripcion: 'Monitor de juego curvo de 32 pulgadas con frecuencia de actualización de 240 Hz para una experiencia de juego fluida y sin tartamudeos.',
       imagenUrl: 'https://imgs.search.brave.com/PZnUOZqOlniK0yet6q6jOTUvM7T35WLSrWkHSjeVAv8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFNTXNtY0lYQUwu/anBn',
       stock: 12,
       precio: 699.99,
+      category: 'monitores',
   },
   {
       id: 9,
@@ -70,6 +78,7 @@ const productos = [
       imagenUrl: 'https://imgs.search.brave.com/u5Zb0_G0dS4mjhnrQ5Xa_EzDiwAORCxEP36ntpAylJ0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxZkZVZDh1ZjNM/LmpwZw',
       stock: 18,
       precio: 149.99,
+      category: 'hardware',
   },
   {
     id: 10,
@@ -78,7 +87,53 @@ const productos = [
     imagenUrl: 'https://imgs.search.brave.com/3-LtXqaNpX7xgo4lSsngexX4WjTMBtJsM3kFef70yrI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxRXY3VTA2S3RM/LmpwZw',
     stock: 9,
     precio: 2299.99,
-}
+    category: 'hardware',
+    },
+    {
+        id: 11,
+        nombre: 'Notebook ASUS ROG Zephyrus G14',
+        descripcion: 'Notebook gaming ultradelgada con procesador AMD Ryzen 9 5900HS, tarjeta gráfica NVIDIA GeForce RTX 3060 y pantalla QHD de 14 pulgadas.',
+        imagenUrl: 'https://imgs.search.brave.com/hR2yGpmivebr2aq50n_bzxt5_qvBIThGyGfd3AXIvr0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDF4Ryt6V2x3T0wu/anBn',
+        stock: 7,
+        precio: 1499.99,
+        category: 'notebooks',
+    },
+    {
+        id: 12,
+        nombre: 'Notebook HP Spectre x360',
+        descripcion: 'Notebook convertible premium con procesador Intel Core i7, pantalla táctil 4K de 13.3 pulgadas y diseño elegante de aluminio.',
+        imagenUrl: 'https://imgs.search.brave.com/knodXjiz9C6zmUh3slnkQM5YlMa-nHNlycMBPvOhrQg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFnbEdQdkNJVkwu/anBn',
+        stock: 6,
+        precio: 1699.99,
+        category: 'notebooks',
+      },
+      {
+        id: 13,
+        nombre: 'Notebook Dell XPS 15',
+        descripcion: 'Notebook ultradelgada con procesador Intel Core i9, pantalla OLED 4K de 15.6 pulgadas y tarjeta gráfica NVIDIA GeForce GTX 1650 Ti.',
+        imagenUrl: 'https://imgs.search.brave.com/1npnRapsOKeouV4hHmppzl46gZxrtaPhyZTxKoCiavw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tdWx0/aW1lZGlhLmJieWNh/c3RhdGljLmNhL211/bHRpbWVkaWEvcHJv/ZHVjdHMvNTAweDUw/MC8xNzAvMTcwNjMv/MTcwNjM1NTYuanBn',
+        stock: 4,
+        precio: 2199.99,
+        category: 'notebooks',
+      },
+      {
+        id: 14,
+        nombre: 'Notebook Lenovo ThinkPad X1 Carbon',
+        descripcion: 'Notebook empresarial ultraligera con procesador Intel Core i7, pantalla HDR Dolby Vision de 14 pulgadas y teclado retroiluminado.',
+        imagenUrl: 'https://imgs.search.brave.com/-PhyAXSbQvvTPFo6YSU8CTy-bV17fFq74GntRd_lajs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/Lzcxd0pKTDdxOG5M/LmpwZw',
+        stock: 3,
+        precio: 1799.99,
+        category: 'notebooks',
+      },
+      {
+        id: 15,
+        nombre: 'Notebook Apple MacBook Pro M2',
+        descripcion: 'Notebook profesional con procesador M2 de Apple, pantalla Retina de 13.3 pulgadas y hasta 20 horas de duración de la batería.',
+        imagenUrl: 'https://imgs.search.brave.com/En0lOV02fNAVEau-yc6hPWwVGrWdYNOPo1sPfFs8ZUY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/YXBwbGUuY29tL25l/d3Nyb29tL2ltYWdl/cy9wcm9kdWN0L21h/Yy9zdGFuZGFyZC9B/cHBsZS1NYWNCb29r/LVByby1YQ29kZS0y/MzAxMTdfYmlnLmpw/Zy5sYXJnZS5qcGc',
+        stock: 5,
+        precio: 1799.99,
+        category: 'notebooks',
+      },
 ];
 
 export const getProducts = () => {
@@ -89,14 +144,18 @@ export const getProducts = () => {
     })
 }
 
-// export const getProductsById = (Id) => {
-//   return new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve(productos.find(prod => prod.id === parseInt(Id)))
-//     }, 1000)
-//   })
-// }
-
 export const getProductsById = (id) => {
     return productos.find((prod) => prod.id == id);
   };
+
+  export const getProductsByCate = (category) => {
+    return new Promise((resolve, reject) => {
+        // Filtrar los productos por la categoria especificada
+        const productosFiltrados = productos.filter(producto => producto.category === category);
+        if (productosFiltrados.length > 0) {
+            resolve(productosFiltrados);
+        } else {
+            reject(`No se encontraron productos en: '${category}'`);
+        }
+    });
+};

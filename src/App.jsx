@@ -21,12 +21,11 @@ function App() {
         <Routes>
           
           <Route exact path='/' element={<ItemListContainer greeting={'Lista de productos'}/>} />
-          <Route exact path='/category/:categoryId' element={<ItemListContainer />} />
           <Route exact path='/product/:prodId' element={<ItemDetailContainer />} />
-          <Route exact path='/hardware' element={<HardwarePage />} />
-          <Route exact path='/perifericos/' element={<PerifericosPage />} />
-          <Route exact path='/monitores/' element={<MonitoresPage />} />
-          <Route exact path='/notebooks/' element={<NotebooksPage />} />
+          <Route path="/pages/:cateName" element={<HardwarePage />} />
+          <Route exact path='/pages/:cateName' element={<PerifericosPage />} />
+          <Route exact path='/pages/:cateName' element={<MonitoresPage />} />
+          <Route exact path='/pages/:cateName' element={<NotebooksPage />} />
 
         </Routes>
     

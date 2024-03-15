@@ -12,21 +12,21 @@ const NavBar = () => {
     <nav className='contNav sidenav' data-mdb-hidden='false'>
 
     <div>
-        <a href="../"><h1 className='titleStyle'>JTech</h1></a>
-      
+      <Link to="/"><h1 className='titleStyle'>JTech</h1></Link>
     </div>
+    
     <div className='contButtons '>
       <button className='ButtonStyle'>
-        <Link to={'/hardware'}>Hardware</Link>
+        <Link to={'/pages/hardware'}>Hardware</Link>
         </button>
       <button className='ButtonStyle'>
-      <Link to={'/perifericos'}>Perifericos</Link>
+      <Link to={'/pages/perifericos'}>Perifericos</Link>
         </button>
       <button className='ButtonStyle'>
-      <Link to={'/monitores'}>Monitores</Link>
+      <Link to={'/pages/monitores'}>Monitores</Link>
         </button>
       <button className='ButtonStyle'>
-      <Link to={'/notebooks'}>Notebooks</Link>
+      <Link to={'/pages/notebooks'}>Notebooks</Link>
         </button>
     </div>
     <CartWidget />
