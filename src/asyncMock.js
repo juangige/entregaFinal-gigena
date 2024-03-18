@@ -150,10 +150,10 @@ export const getProductsById = (id) => {
 
   export const getProductsByCate = (category) => {
     return new Promise((resolve, reject) => {
-        // Filtrar los productos por la categoria especificada
+        // filtramos los productos por la categoria especificada
         const productosFiltrados = productos.filter(producto => producto.category === category);
         if (productosFiltrados.length > 0) {
-            resolve(productosFiltrados);
+            resolve(productosFiltrados); // muestra los productos
         } else {
             reject(`No se encontraron productos en: '${category}'`);
         }

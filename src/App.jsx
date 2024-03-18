@@ -20,7 +20,7 @@ function App() {
       <MarcasNav />      
         <Routes>
           
-          <Route exact path='/' element={<ItemListContainer greeting={'Lista de productos'}/>} />
+          <Route exact path='/' element={<ItemListContainer greeting={'Bienvenidos'}/>} />
           <Route exact path='/product/:prodId' element={<ItemDetailContainer />} />
           <Route path="/pages/:cateName" element={<HardwarePage />} />
           <Route exact path='/pages/:cateName' element={<PerifericosPage />} />

@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { getProductsByCate } from "../../asyncMock";
 import { useParams, Link } from "react-router-dom";
 import './hardware.css';
+import Item from "../../components/Item/Item";
 
 export default function Hardware() {
     const [productos, setProductos] = useState([]);
     const { cateName } = useParams();
 
     useEffect(() => {
-        getProductsByCate(cateName) // Llama a la función getProductsByCate con la categoría obtenida de los parámetros de la URL
+        getProductsByCate(cateName) // llamamos a la funcion getProductsByCate con la categoria obtenida de los parametros de la URL
             .then((productos) => setProductos(productos))
             .catch(error => console.error(error));
     }, [cateName]);
@@ -18,31 +19,20 @@ export default function Hardware() {
             <div>
                 <h1>Categoria: {cateName}</h1>
             </div>
+            <section className="contCards">
 
-            <div className="contCards">
-                {productos.map(producto => (
-                    <article key={producto.id} className='cardProduct'>
-                        <header>
-                            <h4>{producto.nombre}</h4>
-                        </header>
-
-                        <div className='imageContainer'>
-                            <img src={producto.imagenUrl} alt='' />
-                        </div>
-
-                        <div className='infoContainer'>
-                            <p className='price'>Precio: ${producto.precio}</p>
-                            <p className='stock'>Stock Disponible: {producto.stock}</p>
-                        </div>
-
-                        <button className='detailButton'>
-                            <Link to={`/product/${producto.id}`}>
-                                Ver Detalle
-                            </Link>
-                        </button>
-                    </article>
+            {productos.map(producto => (
+                <Item 
+                key={producto.id}
+                id={producto.id}
+                nombre={producto.nombre}
+                imagenUrl={producto.imagenUrl}
+                stock={producto.stock}
+                precio={producto.precio}
+                />
                 ))}
-            </div>
+
+            </section>
         </>
     );
 }
