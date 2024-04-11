@@ -16,9 +16,16 @@ export default function ItemListContainer({greeting}) {
       })
     })
 
+    const styleGreeting = {
+      display: 'flex',
+      justifyContent: 'center',
+      margin: 20,
+      fontSize: 35,
+    }
+
   return (
     <>
-     <h2>{greeting}</h2> 
+     <h2 style={styleGreeting}>{greeting}</h2> 
      <ItemList productos={productos} />
     </>
   )

@@ -17,7 +17,7 @@ export default function Hardware() {
     return (
         <>
             <div>
-                <h1>Categoria: {cateName}</h1>
+                <h1 className="titleCategory">{cateName}</h1>
             </div>
             <section className="contCards">
 

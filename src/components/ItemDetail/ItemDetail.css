@@ -19,6 +19,7 @@
 
 .infoContainer {
     margin-top: 20px;
+    text-align: center;
 }
 
 .price {
@@ -32,5 +33,10 @@
 
 .description {
     color: #888888;
+    margin-top: 10px;
+}
+
+.containerBtn {
+    text-align: center;
     margin-top: 10px;
 }

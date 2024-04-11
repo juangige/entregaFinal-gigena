@@ -25,10 +25,11 @@ export default function Item({id, nombre, imagenUrl, stock, precio }) {
                     <p className='price'>Precio: ${precio}</p>
                     <p className='stock'>Stock Disponible: {stock}</p>
                 </div>
-
+                <div className='detailBtnConteiner'>
                     <button className='detailButton' onClick={() => handleClick(id)}>
                         Ver Detalle
                     </button>
+                </div>
             </article>
         </div>
   )

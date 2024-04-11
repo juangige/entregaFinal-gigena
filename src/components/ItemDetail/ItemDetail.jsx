@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount.jsx'
+import { Link } from "react-router-dom";
 
-export default function ItemDetail({id, nombre, descripcion, precio, stock, imagenUrl}) {
+export default function ItemDetail({ id, nombre, descripcion, precio, stock, imagenUrl }) {
+    const [cantidadAgregada, setCantidadAgregada] = useState(0);
+    const [mostrarTerminarCompra, setMostrarTerminarCompra] = useState(false);
+
+    const handdleOnAdd = (cantidad) => {
+        setCantidadAgregada(cantidad);
+        if (cantidad > 0) {
+            setMostrarTerminarCompra(true);
+        }
+    };
+
     return (
         <div className="cardContainer">
             <article className="cardProduct">
@@ -23,8 +34,16 @@ export default function ItemDetail({id, nombre, descripcion, precio, stock, imag
                         Descripcion: {descripcion}
                     </p>
                 </div>
-                <ItemCount initial={0} stock={10} onAdd={(cantidad) => console.log('Cantidad agregada:', cantidad)} />
+                <div className="containerBtn">
+                    {mostrarTerminarCompra ? (
+                        <Link to='/pages/cart' className="add-to-cart-button">Terminar Compra</Link>
+                    ) : (
+                        <ItemCount id={id} nombre={nombre} initial={1} stock={stock} precio={precio} onAdd={handdleOnAdd} />
+                    )}
+                </div>
             </article>
         </div>
     )
 }
+
+
