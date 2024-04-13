@@ -16,6 +16,8 @@ const Cart = () => {
               <span className="item-name">Nombre: {item.nombre}</span>
               <span className="item-quantity">Cantidad: {item.quantity}</span>
               <span className="item-price">Precio: {item.precio}</span>
+              {/* Imprime la URL de la imagen para verificar */}
+              {console.log('URL de la imagen:', item.imagenUrl)}
               <img src={item.imagenUrl} alt={`Imagen de ${item.nombre}`} className="item-image" />
             </div>
           </li>

@@ -25,6 +25,7 @@ export default function ItemCount({ stock, initial, id, nombre, precio, imagenUr
         setMostrarTerminarCompra(true);
     };
     
+    
 
     return (
         <div className='item-count-container'>

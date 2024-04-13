@@ -38,7 +38,8 @@ export default function ItemDetail({ id, nombre, descripcion, precio, stock, ima
                     {mostrarTerminarCompra ? (
                         <Link to='/pages/cart' className="add-to-cart-button">Terminar Compra</Link>
                     ) : (
-                        <ItemCount id={id} nombre={nombre} initial={1} stock={stock} precio={precio} onAdd={handdleOnAdd} />
+                        <ItemCount id={id} nombre={nombre} initial={1} stock={stock} precio={precio} imagenUrl={imagenUrl} onAdd={handdleOnAdd} />
+
                     )}
                 </div>
             </article>

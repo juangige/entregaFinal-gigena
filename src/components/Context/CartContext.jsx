@@ -10,6 +10,7 @@ export const CartProvider = ({ children }) => {
 
     const addToCart = (item, quantity) => {
         const existingItemIndex = carrito.findIndex(cartItem => cartItem.id === item.id);
+        
     
         if (existingItemIndex !== -1) {
             const updatedCart = [...carrito];
