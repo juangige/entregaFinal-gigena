@@ -1,19 +1,34 @@
 import React, { useEffect, useState } from "react";
-import { getProductsByCate } from "../../asyncMock";
 import { useParams, Link } from "react-router-dom";
 import './hardware.css';
 import Item from "../../components/Item/Item";
+import { db } from "../../components/Firebase/Firebase";
+import { query, where, collection, getDocs } from "firebase/firestore";
 
 export default function Hardware() {
     const [productos, setProductos] = useState([]);
     const { cateName } = useParams();
 
     useEffect(() => {
-        getProductsByCate(cateName) // llamamos a la funcion getProductsByCate con la categoria obtenida de los parametros de la URL
-            .then((productos) => setProductos(productos))
-            .catch(error => console.error(error));
-    }, [cateName]);
+        const productosRef = collection(db, "productos");
+        const q = query(productosRef, where("category", "==", cateName));
 
+        const fetchProductosByCate = async () => {
+            try {
+                const productosSnapshot = await getDocs(q);
+                const productosData = productosSnapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setProductos(productosData);
+            } catch (error) {
+                console.error("Error al obtener productos por categoría:", error);
+            }
+        };
+
+        fetchProductosByCate();
+
+    }, [cateName]);
     return (
         <>
             <div>

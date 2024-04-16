@@ -10,8 +10,8 @@ import MonitoresPage from './pages/Monitores/MonitoresPage.jsx';
 import NotebooksPage from './pages/Notebooks/NotebooksPage.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import Cart from './pages/Cart/Cart.jsx';
-import { CartProvider } from './components/Context/CartContext.jsx'; // Importa CartProvider
-import { useState } from 'react';
+import { CartProvider } from './components/Context/CartContext.jsx'; // importa CartProvider
+
 
 function App() {
  
@@ -24,7 +24,7 @@ function App() {
           <MarcasNav />
           <Routes>
             <Route exact path='/' element={<ItemListContainer greeting={'Bienvenidos'} />} />
-            <Route exact path='/product/:prodId' element={<ItemDetailContainer />} />
+            <Route exact path='/product/:id' element={<ItemDetailContainer />} />
             <Route path="/pages/:cateName" element={<HardwarePage />} />
             <Route exact path='/pages/:cateName' element={<PerifericosPage />} />
             <Route exact path='/pages/:cateName' element={<MonitoresPage />} />

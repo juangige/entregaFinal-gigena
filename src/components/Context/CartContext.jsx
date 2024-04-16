@@ -5,7 +5,7 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([]);
 
-    // Calcular la cantidad total de productos en el carrito
+    // calcular la cantidad total de productos en el carrito
     const totalQuantity = carrito.reduce((acc, item) => acc + item.quantity, 0);
 
     const addToCart = (item, quantity) => {
@@ -21,9 +21,14 @@ export const CartProvider = ({ children }) => {
         }
     };
     
+    const removeFromCart = (itemId) => {
+        // logica para eliminar un elemento del carrito
+        const updatedCart = carrito.filter(item => item.id !== itemId);
+        setCarrito(updatedCart);
+      };
 
     return (
-        <CartContext.Provider value={{ carrito, addToCart, totalQuantity }}>
+        <CartContext.Provider value={{ carrito, addToCart, totalQuantity, removeFromCart }}>
             {children}
         </CartContext.Provider>
     );
