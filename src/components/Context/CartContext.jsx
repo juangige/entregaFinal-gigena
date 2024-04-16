@@ -2,11 +2,14 @@ import React, { createContext, useState } from 'react';
 
 export const CartContext = createContext();
 
+
 export const CartProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([]);
 
     // calcular la cantidad total de productos en el carrito
     const totalQuantity = carrito.reduce((acc, item) => acc + item.quantity, 0);
+
+    
 
     const addToCart = (item, quantity) => {
         const existingItemIndex = carrito.findIndex(cartItem => cartItem.id === item.id);
@@ -26,6 +29,8 @@ export const CartProvider = ({ children }) => {
         const updatedCart = carrito.filter(item => item.id !== itemId);
         setCarrito(updatedCart);
       };
+
+   
 
     return (
         <CartContext.Provider value={{ carrito, addToCart, totalQuantity, removeFromCart }}>

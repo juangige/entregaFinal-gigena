@@ -11,6 +11,7 @@ import NotebooksPage from './pages/Notebooks/NotebooksPage.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import Cart from './pages/Cart/Cart.jsx';
 import { CartProvider } from './components/Context/CartContext.jsx'; // importa CartProvider
+import Checkout from './components/Checkout/Checkout.jsx';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route exact path='/pages/:cateName' element={<MonitoresPage />} />
             <Route exact path='/pages/:cateName' element={<NotebooksPage />} />
             <Route exact path='/pages/Cart' element={<Cart />} />
+            <Route exact path='/Checkout' element={<Checkout />} />
           </Routes>
           <Footer />
         </BrowserRouter>
