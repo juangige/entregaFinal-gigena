@@ -1,34 +1,46 @@
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../Context/CartContext';
 import { useForm } from 'react-hook-form';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../Firebase/Firebase';
 import './Checkout.css'
 
 const Checkout = () => {
-    const { carrito } = useContext(CartContext);
+    const { carrito, clearCart } = useContext(CartContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const [pedidoId, setPedidoId] = useState("")
 
 
-    const comprar = (data) => {
+    const comprar = async (data) => {
         const totalPrecio = carrito.reduce((total, item) => total + (item.quantity * item.precio), 0);
         const pedido = {
             cliente: data,
             productos: carrito,
             total: totalPrecio.toFixed(2)
         };
-
+    
         // logica para enviar el pedido
-        const pedidosRef = collection(db, "pedidos")
-
-        addDoc(pedidosRef, pedido)
-            .then((doc) =>{
-                setPedidoId(doc.id)
-                vaciarCarrito();
-            })
-        console.log(pedido);
+        const pedidosRef = collection(db, "pedidos");
+    
+        try {
+            const docRef = await addDoc(pedidosRef, pedido);
+            setPedidoId(docRef.id);
+            clearCart(); // vaciar carrito al finalizar compra
+    
+            // Actualizar el stock de cada producto comprado en la base de datos
+            for (const producto of carrito) {
+                const productoRef = doc(db, 'productos', producto.id);
+                const productoSnapshot = await getDoc(productoRef);
+    
+                if (productoSnapshot.exists()) {
+                    const nuevoStock = productoSnapshot.data().stock - producto.quantity;
+                    await updateDoc(productoRef, { stock: nuevoStock });
+                }
+            }
+        } catch (error) {
+            console.error("Error al realizar la compra:", error);
+        }
     };
 
     if(pedidoId) {

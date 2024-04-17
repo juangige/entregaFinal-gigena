@@ -9,7 +9,10 @@ export const CartProvider = ({ children }) => {
     // calcular la cantidad total de productos en el carrito
     const totalQuantity = carrito.reduce((acc, item) => acc + item.quantity, 0);
 
-    
+    // vaciar Carrito al finalizar compra
+    const clearCart = () => {
+        setCarrito([]);
+    };
 
     const addToCart = (item, quantity) => {
         const existingItemIndex = carrito.findIndex(cartItem => cartItem.id === item.id);
@@ -33,7 +36,7 @@ export const CartProvider = ({ children }) => {
    
 
     return (
-        <CartContext.Provider value={{ carrito, addToCart, totalQuantity, removeFromCart }}>
+        <CartContext.Provider value={{ carrito, addToCart, totalQuantity, removeFromCart, clearCart }}>
             {children}
         </CartContext.Provider>
     );
