@@ -9,7 +9,7 @@ export const CartProvider = ({ children }) => {
     // calcular la cantidad total de productos en el carrito
     const totalQuantity = carrito.reduce((acc, item) => acc + item.quantity, 0);
 
-    // vaciar Carrito al finalizar compra
+    // vaciar carrito al finalizar compra
     const clearCart = () => {
         setCarrito([]);
     };

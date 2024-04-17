@@ -22,7 +22,7 @@ const Cart = () => {
               <span className="item-quantity">Cantidad: {item.quantity}</span>
               <span className="item-price">Precio: {item.precio}</span>
               <img src={item.imagenUrl} alt={`Imagen de ${item.nombre}`} className="item-image" />
-              {/* Agregar un botón para eliminar el elemento del carrito */}
+              {/* boton eliminar producto del carrito */}
               <button  onClick={() => removeFromCart(item.id)}>
                 <img className='btn-eliminar' src="../../assets/btn_eliminar.svg" alt="Eliminar Item" />
               </button>

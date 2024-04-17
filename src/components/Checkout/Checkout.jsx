@@ -17,7 +17,8 @@ const Checkout = () => {
         const pedido = {
             cliente: data,
             productos: carrito,
-            total: totalPrecio.toFixed(2)
+            total: totalPrecio.toFixed(2),
+            date: new Date(),
         };
     
         // logica para enviar el pedido
@@ -39,7 +40,7 @@ const Checkout = () => {
                 }
             }
         } catch (error) {
-            console.error("Error al realizar la compra:", error);
+            console.error("Error:", error);
         }
     };
 
@@ -81,4 +82,3 @@ const Checkout = () => {
 };
 
 export default Checkout;
-
