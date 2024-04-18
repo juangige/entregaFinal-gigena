@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { CartContext } from '../../components/Context/CartContext';
 import './Cart.css';
 import { Link } from 'react-router-dom';
+import btnEliminar from '../../assets/eliminar_btn.png';
 
 const Cart = () => {
   const { carrito, totalQuantity, removeFromCart } = useContext(CartContext);
@@ -18,21 +19,23 @@ const Cart = () => {
         {carrito.map((item) => (
           <li key={item.id} className="cart-item">
             <div className="cart-item-cont2">
-              <span className="item-name">Nombre: {item.nombre}</span>
+              <span className="item-name">{item.nombre}</span>
               <span className="item-quantity">Cantidad: {item.quantity}</span>
               <span className="item-price">Precio: {item.precio}</span>
               <img src={item.imagenUrl} alt={`Imagen de ${item.nombre}`} className="item-image" />
               {/* boton eliminar producto del carrito */}
-              <button  onClick={() => removeFromCart(item.id)}>
-                <img className='btn-eliminar' src="../../assets/btn_eliminar.svg" alt="Eliminar Item" />
+              <button className='btn-eliminar-cont' onClick={() => removeFromCart(item.id)}>
+                <img className='btn-eliminar' src={btnEliminar} alt="Eliminar Item" />
               </button>
             </div>
           </li>
         ))}
       </ul>
-      <Link to='/Checkout'>
+      {carrito.length > 0 && (
+        <Link to='/Checkout' className="finalizar-compra-btn">
         Finalizar Compra
       </Link>
+      )}
     </div>
   );
 };
